@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+
+  <servlet>
+    <servlet-name>DeleteCustomerServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.DeleteCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCustomerServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.AddCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RefreshServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.RefreshServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SaveServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.SaveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CustomerPageServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.CustomerPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>com.aowin.servlet.Test</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SomainInfoServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.SomainInfoServlet</servlet-class>
+  </servlet>
+
+
+ <servlet>
+  	<servlet-name>dwr</servlet-name>
+  	<servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SaveSomain</servlet-name>
+    <servlet-class>com.aowin.servlet.SaveSomainServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteSalesServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.DeleteSalesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SalesUpServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.SalesUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LiaojieServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.LiaojieServlet</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+  	<servlet-name>dwr</servlet-name>
+  	<url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+ 
+  <servlet-mapping>
+    <servlet-name>DeleteCustomerServlet</servlet-name>
+    <url-pattern>/servlet/DeleteCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCustomerServlet</servlet-name>
+    <url-pattern>/servlet/AddCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RefreshServlet</servlet-name>
+    <url-pattern>/servlet/RefreshServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveServlet</servlet-name>
+    <url-pattern>/servlet/SaveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerPageServlet</servlet-name>
+    <url-pattern>/servlet/CustomerPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/servlet/Test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SomainInfoServlet</servlet-name>
+    <url-pattern>/servlet/SomainInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveSomain</servlet-name>
+    <url-pattern>/servlet/SaveSomainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteSalesServlet</servlet-name>
+    <url-pattern>/servlet/DeleteSalesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SalesUpServlet</servlet-name>
+    <url-pattern>/servlet/SalesUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LiaojieServlet</servlet-name>
+    <url-pattern>/servlet/LiaojieServlet</url-pattern>
+  </servlet-mapping>	
+  <!-- 权限过滤器部分  -->
+   <filter>
+  	<filter-name>quanxianFilter</filter-name>
+  	<filter-class>com.aowin.filter.SalesUserFilter</filter-class>
+  </filter>
+   <filter>
+  	<filter-name>caigouquanxuan</filter-name>
+  	<filter-class>com.aowin.filter.BuyerUserFilter</filter-class>
+  </filter>
+  
+   <filter>
+  	<filter-name>cangkuguanliquanxuan</filter-name>
+  	<filter-class>com.aowin.filter.KeeperUser</filter-class>
+  </filter>
+   <filter>
+  	<filter-name>caiwuguanliquanxuan</filter-name>
+  	<filter-class>com.aowin.filter.AccounUserFilter</filter-class>
+  </filter>
+ 
+  
+  
+  
+  
+  
+  
+    <filter-mapping>
+  	<filter-name>quanxianFilter</filter-name>
+  	<url-pattern>/servlet/RefreshServlet</url-pattern>
+  </filter-mapping>	
+  
+    <filter-mapping>
+  	<filter-name>quanxianFilter</filter-name>
+  	<url-pattern>/servlet/SomainInfoServlet</url-pattern>
+  </filter-mapping>	
+  
+    <filter-mapping>
+  	<filter-name>quanxianFilter</filter-name>
+  	<url-pattern>/gztm/SearchSales.jsp</url-pattern>
+  </filter-mapping>	
+  
+    <filter-mapping>
+  	<filter-name>quanxianFilter</filter-name> 
+  	<url-pattern>/gztm/liaojieTZ.jsp</url-pattern>
+  </filter-mapping>	
+  
+  
+  
+    <filter-mapping>
+  	<filter-name>caigouquanxuan</filter-name> 
+  	<url-pattern>/servlet/servlet_1_index</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caigouquanxuan</filter-name> 
+  	<url-pattern>/gztm/cgd.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caigouquanxuan</filter-name> 
+  	<url-pattern>/gztm/lj.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caigouquanxuan</filter-name> 
+  	<url-pattern>/common/cxtj_cgd.jsp</url-pattern>
+  </filter-mapping>	
+  
+  
+  
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/categoryManage.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/ProductManage.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/Putin.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/outstock.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/stock.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/instockBaobiao.jsp</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>cangkuguanliquanxuan</filter-name> 
+  	<url-pattern>/outstockBaobiao.jsp</url-pattern>
+  </filter-mapping>	
+  
+  
+  
+    <filter-mapping>
+  	<filter-name>caiwuguanliquanxuan</filter-name> 
+  	<url-pattern>/servlet/userServlet</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caiwuguanliquanxuan</filter-name> 
+  	<url-pattern>/servlet/FuKuan</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caiwuguanliquanxuan</filter-name> 
+  	<url-pattern>/servlet/ShouKuan</url-pattern>
+  </filter-mapping>	
+    <filter-mapping>
+  	<filter-name>caiwuguanliquanxuan</filter-name> 
+  	<url-pattern>/gztm/fksksearch.jsp</url-pattern>
+  </filter-mapping>	
+  
+  
+   
+  
+  <!-- 权限过滤器部分  -->
+  <!-- 乃昌servlet部分  -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_1_index</servlet-name>
+    <servlet-class>com.aowin.servlet.servlet_1_index</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_2_submit</servlet-name>
+    <servlet-class>com.aowin.servlet.servlet_2_submit</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_cgd_2</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_cgd_2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PoitemDao</servlet-name>
+    <servlet-class>com.aowin.dao.PoitemDao</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServLet_cgd_1</servlet-name>
+    <servlet-class>com.aowin.servlet.ServLet_cgd_1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_cx_1</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_cx_1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_index_1</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_index_1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_index_2</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_index_2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_lj_1</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_lj_1</servlet-class>
+  </servlet>
+  
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>servlet_1_index</servlet-name>
+    <url-pattern>/servlet/servlet_1_index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_2_submit</servlet-name>
+    <url-pattern>/servlet/servlet_2_submit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_cgd_2</servlet-name>
+    <url-pattern>/servlet/Servlet_cgd_2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PoitemDao</servlet-name>
+    <url-pattern>/servlet/PoitemDao</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServLet_cgd_1</servlet-name>
+    <url-pattern>/servlet/ServLet_cgd_1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_cx_1</servlet-name>
+    <url-pattern>/servlet/Servlet_cx_1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_index_1</servlet-name>
+    <url-pattern>/servlet/Servlet_index_1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_index_2</servlet-name>
+    <url-pattern>/servlet/Servlet_index_2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_lj_1</servlet-name>
+    <url-pattern>/servlet/Servlet_lj_1</url-pattern>
+  </servlet-mapping>
+  
+
+  
+  
+  <!-- 乃昌servlet部分  -->
+  <!-- 豪servlet部分  -->
+  <servlet>
+    <servlet-name>categoryManageServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.categoryManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>categoryManageUpdateServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.categoryManageUpdateServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>categoryManageServlet</servlet-name>
+    <url-pattern>/servlet/categoryManageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>categoryManageUpdateServlet</servlet-name>
+    <url-pattern>/servlet/categoryManageUpdateServlet</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+    <servlet-name>inStockServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.inStockServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>showpoServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.showpoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>outStockServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.outStockServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>showsoServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.showsoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>feyeServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.feyeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>tzServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.tzServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StockInquireServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.StockInquireServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>delCategoryServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.delCategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>delProductServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.delProductServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+ 
+  <servlet-mapping>
+    <servlet-name>inStockServlet</servlet-name>
+    <url-pattern>/servlet/inStockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>showpoServlet</servlet-name>
+    <url-pattern>/servlet/showpoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>outStockServlet</servlet-name>
+    <url-pattern>/servlet/outStockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>showsoServlet</servlet-name>
+    <url-pattern>/servlet/showsoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>feyeServlet</servlet-name>
+    <url-pattern>/servlet/feyeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>tzServlet</servlet-name>
+    <url-pattern>/servlet/tzServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StockInquireServlet</servlet-name>
+    <url-pattern>/servlet/StockInquireServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>delCategoryServlet</servlet-name>
+    <url-pattern>/servlet/delCategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>delProductServlet</servlet-name>
+    <url-pattern>/servlet/delProductServlet</url-pattern>
+  </servlet-mapping>	
+  <!-- 豪servlet部分  -->
+  <!-- 郑servlet部分  -->
+  
+  <servlet>
+    <servlet-name>CheckLoginServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.CheckLoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.userServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userUpdate</servlet-name>
+    <servlet-class>com.aowin.servlet.userUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserXg</servlet-name>
+    <servlet-class>com.aowin.servlet.UserXg</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserAdd</servlet-name>
+    <servlet-class>com.aowin.servlet.UserAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FuKuan</servlet-name>
+    <servlet-class>com.aowin.servlet.FuKuan</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShouKuan</servlet-name>
+    <servlet-class>com.aowin.servlet.ShouKuan</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>venderCodeServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.venderCodeServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>CheckLoginServlet</servlet-name>
+    <url-pattern>/servlet/CheckLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userServlet</servlet-name>
+    <url-pattern>/servlet/userServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userUpdate</servlet-name>
+    <url-pattern>/servlet/userUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserXg</servlet-name>
+    <url-pattern>/servlet/UserXg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserAdd</servlet-name>
+    <url-pattern>/servlet/UserAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FuKuan</servlet-name>
+    <url-pattern>/servlet/FuKuan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShouKuan</servlet-name>
+    <url-pattern>/servlet/ShouKuan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>venderCodeServlet</servlet-name>
+    <url-pattern>/servlet/venderCodeServlet</url-pattern>
+  </servlet-mapping>	
+  
+  <!-- 郑servlet部分  -->
+
+  
+  
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
